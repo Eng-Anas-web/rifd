@@ -1,0 +1,181 @@
+body{
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-image: url("../images/background.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+}
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+
+/* الهيدر والعداد الرئيسي */
+.header {
+  background: #05254387;
+  color: white;
+  padding: 30px;
+  text-align: center;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.counter {
+  font-size: 65px;
+  font-weight: bold;
+  color: #f1c40f;
+  margin: 10px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.header p {
+  color: #bdc3c7;
+  font-size: 18px;
+  margin: 0;
+}
+
+/* منطقة العدادات الديناميكية */
+.sub-counters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
+  margin-top: 25px;
+  border-top: 1px solid #34495e;
+  padding-top: 20px;
+}
+.type-box {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+.type-box:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #0eddf8f1;
+}
+.type-name {
+  font-size: 13px;
+  color: #ecf0f1;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+.type-count {
+  font-size: 30px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* صندوق السجل (Logs) */
+.log-box {
+  background: rgba(61, 61, 61, 0.543);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+.log-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #f0f2f5;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+.log-header h3 {
+  margin: 0;
+  color: #0eddf8f1;
+  font-size: 20px;
+}
+.clear-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.clear-btn:hover {
+  background-color: #c0392b;
+  transform: scale(1.05);
+}
+
+.logs-container {
+  max-height: 450px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+.log-item {
+  padding: 15px;
+  border-bottom: 1px solid #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  animation: slideIn 0.4s ease-out;
+}
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 11px;
+  min-width: 80px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.entered {
+  background-color: #d4efdf;
+  color: #1e8449;
+  border: 1px solid #27ae60;
+}
+.exited {
+  background-color: #f9ebea;
+  color: #943126;
+  border: 1px solid #e74c3c;
+}
+
+.user-info {
+  flex-grow: 1;
+  margin-left: 20px;
+  text-align: left;
+}
+.user-info strong {
+  display: block;
+  color: #2c3e50;
+  font-size: 17px;
+}
+.tag-id {
+  color: #95a5a6;
+  font-size: 12px;
+  font-family: monospace;
+}
+.time {
+  color: #7f8c8d;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.logs-container::-webkit-scrollbar {
+  width: 6px;
+}
+.logs-container::-webkit-scrollbar-thumb {
+  background-color: #cbd5e0;
+  border-radius: 10px;
+}

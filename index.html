@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ar" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>نظام التتبع الذكي - لوحة التحكم</title>
+    <link rel="stylesheet" href="./css/style.css"/>
+  </head>
+  <body>
+    <div class="container">
+      <!-- قسم العدادات -->
+      <div class="header">
+        <h2>RFID Smart Inventory</h2>
+        <p>Live Total Count</p>
+        <div class="counter" id="totalCounter">0</div>
+
+        <!-- حاوية العدادات الديناميكية (Apple, Banana, etc.) -->
+        <div class="sub-counters" id="dynamicCounters"></div>
+      </div>
+
+      <!-- قسم سجل النشاط -->
+      <div class="log-box">
+        <div class="log-header">
+          <h3>System Activity Log</h3>
+          <button class="clear-btn" onclick="clearLogs()">
+            🗑️ Clear History
+          </button>
+        </div>
+        <div class="logs-container" id="logsContainer">
+          <p
+            id="waitingMessage"
+            style="text-align: center; color: #bccfd1; margin-top: 30px"
+          >
+            Waiting for scan activity...
+          </p>
+        </div>
+      </div>
+    </div>
+
+    
+    <!-- استدعاء مكتبات Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
